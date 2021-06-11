@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/8503eca640.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Todo App</title>
+  </head>
+  <body>
+    <main class="main-con">
+      <header class="todo-con">
+        <h1>Todo App</h1>
+        <input
+          type="text"
+          class="todoInput"
+          placeholder="Please Enter The Task"
+        />
+      </header>
+
+      <ul class="task-sec task-sec1">
+        <h3>Task</h3>
+      </ul>
+
+      <ul class="task-sec task-sec2">
+        <h3>Task History</h3>
+      </ul>
+    </main>
+
+    <script>
+      $(document).ready(function () {
+        $(".todoInput").keypress(() => {
+          let keycode = event.keycode ? event.keycode : event.which;
+
+          if (keycode == "13" && $(".todoInput").val() !== "") {
+            let taskBox = $('<li class="task"></li>').text(
+              $(".todoInput").val()
+            );
+
+            let del = $('<i class="fas fa-trash-alt"></i>');
+            let check = $('<i class="fas fa-check"></i>');
+
+            del.click(() => {
+              let parentBox = $(del).parent();
+              parentBox.fadeOut(() => {
+                parentBox.remove();
+              });
+            });
+
+            check.click(() => {
+              let parentBox = $(check).parent();
+              parentBox.fadeIn(() => {
+                $(".task-sec2").append(parentBox);
+                check.remove();
+              });
+            });
+
+            taskBox.append(del, check); //add p and i tag in task div
+            $(".task-sec1").append(taskBox); // add task div into main sec-1 element
+            $(".todoInput").val(""); // clear input value
+            $(".todoInput").removeClass("inputError");
+            $(".todoInput").attr("placeholder", "Please Enter The Task");
+          } else {
+            $(".todoInput").attr("placeholder", "Please Enter Valid Task");
+            $(".todoInput").addClass("inputError");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

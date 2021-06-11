@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(
+    to right top,
+    #e6cefb,
+    #dcc1fb,
+    #d1b5fc,
+    #c5a9fd,
+    #b69dff
+  );
+  padding: 5rem;
+}
+
+.main-con {
+  width: 60%;
+  margin: auto;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background-color: rgb(255, 255, 255, 0.3);
+  border-radius: 1rem;
+  border: 1px solid rgb(255, 255, 255, 0.2);
+  box-shadow: -1px 26px 31px -13px rgba(0, 0, 0, 0.3);
+}
+
+.todo-con h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: rgba(114, 106, 209, 1);
+  font-weight: 700;
+  font-size: 3rem;
+}
+
+.todo-con input {
+  width: 100%;
+  height: 3rem;
+  outline: none;
+  border: 1px solid #7743d871;
+  border-radius: 0.3rem;
+  padding: 0.8rem;
+  margin-bottom: 1.5rem;
+  background-color: rgb(255, 255, 255, 0.5);
+  font-family: "Roboto", sans-serif;
+}
+
+.todo-con input:focus {
+  border: 2px solid #7743d8d8;
+}
+.todo-con input::placeholder {
+  color: rgb(165, 165, 165);
+}
+
+.todo-con .inputError::placeholder {
+  color: rgb(247, 15, 15);
+}
+
+.todo-con .inputError {
+  border: 2px solid rgb(247, 15, 15);
+}
+
+.task-sec h3 {
+  margin: 0.3rem 0;
+  color: rgba(87, 80, 204, 1);
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.task i {
+  float: right;
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
+}
+
+.task {
+  background-color: rgba(114, 106, 209, 1);
+  border-radius: 0.3rem;
+  padding: 0.8rem;
+  margin-bottom: 0.3rem;
+  color: white;
+  box-shadow: 0px 1px 7px 1px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease-in-out;
+  list-style: none;
+}
+
+.task:hover {
+  background-color: rgb(100, 90, 212);
+}
+
+.task-sec2 .task {
+  background-color: rgba(238, 235, 250, 0.5);
+  border: 1px solid rgba(182, 171, 241, 0.7);
+  border-radius: 0.3rem;
+  padding: 0.8rem;
+  margin-bottom: 0.3rem;
+  transition: all 0.2s ease-in-out;
+}
+.task-sec2 .task:hover {
+  background-color: rgba(217, 211, 253, 0.7);
+}
+
+.task i {
+  margin-left: 1.8rem;
+  cursor: pointer;
+}
+
+.task-sec2 .task,
+.task-sec2 .task i {
+  color: rgb(72, 62, 190);
+}
+
+.task-sec2 {
+  margin-top: 0.8rem;
+}
+.fa-check {
+  transition: all 0.2s ease-in-out;
+}
+
+.fa-check:hover {
+  color: rgb(115, 255, 0);
+  /* text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); */
+  transform: scale(1.3);
+}
+.fa-trash-alt {
+  transition: 0.2s ease-in;
+}
+.fa-trash-alt:hover {
+  color: rgb(247, 188, 26);
+  /* text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); */
+  transform: scale(1.3);
+}
